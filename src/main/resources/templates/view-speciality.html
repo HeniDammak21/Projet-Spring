@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<title>Speciality Details</title>
+	<style>
+		.card {
+			margin-top: 20px;
+		}
+
+		label {
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container my-5">
+		<h3>Speciality Details:</h3>
+		<div class="card">
+			<div class="card-body">
+				<div class="row">
+					<div class="col-md-8 offset-md-2">
+
+						<form th:action="@{/api/speciality/update}" th:object="${sp}" th:method="PUT">
+
+							<input type="hidden" th:field="*{id}" />
+
+							<div class="form-group">
+								<label for="name">Name:</label>
+								<input disabled type="text" class="form-control" id="name" name="name"
+									th:field="*{specialityName}" required />
+							</div>
+
+
+
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</body>
+
+</html>
